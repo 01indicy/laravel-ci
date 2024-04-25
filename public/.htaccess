@@ -5,6 +5,11 @@
 
     RewriteEngine On
 
+     # enable rewrites
+    Options +FollowSymLinks
+    RewriteEngine on
+    RewriteRule ^lumen(.*)/$ /lumen/public/index.php?$1 [QSA,L]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
