@@ -13,6 +13,7 @@ class AuthController extends Controller {
 
         return response()->json(["msg" => "login success"], 201);
     }
+
     public function logout(Request $request): \Illuminate\Http\JsonResponse {
         $this->validate($request, [
             'token' => 'required'
